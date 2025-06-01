@@ -190,17 +190,10 @@ Access the OSC configuration through the Settings menu:
 
 ## 🔄 Version Information
 
-This help guide is updated regularly to reflect new features and improvements. For the latest information about PDFOSC features and updates, visit the [official repository](https://github.com/chilibytesdotcom/pdfosc).
+This help guide is updated regularly to reflect new features and improvements.</br>
+For the latest information about PDFOSC features and updates, visit the [official repository](https://github.com/chilibytesdotcom/pdfosc).
 
-### Current Features
-- Smart external link handling
-- Enhanced keyboard shortcuts  
-- Intelligent state management
-- Robust OSC integration
-- Cross-platform compatibility
-
----
 
 <div align="center">
-<b>📚 Happy presenting with PDFOSC!</b>
+<b>© 2025[ChiliBytes.com](https://chilibytes.com)</b>
 </div> 
