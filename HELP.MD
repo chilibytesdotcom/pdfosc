@@ -25,10 +25,9 @@ this guide covers everything you need to know.</br>
 ### Installation & First Launch
 1. **Download** the latest release for your platform
 2. **Launch** PDFOSC from your applications menu
-3. **Open** your first PDF file through the File menu or drag-and-drop
-**Due to the architecture of Electron, the initial launch of PDFOSC may take some time. Please be patient.</br>
-A full refactor using Tauri is currently in progress:</br>
-this will significantly improve performance and reduce application size.**
+3. **Open** your first PDF file through the File menu or drag-and-drop</br>
+**Note:** Due to the architecture of Electron, **the initial launch of PDFOSC may take some time.** Please be patient.</br>
+A full refactor using Tauri is currently in progress: this will significantly improve performance and reduce application size.
 
 ### Opening PDF Files
 - **File Menu**: Use File → Open to browse and select PDF files
