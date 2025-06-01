@@ -28,7 +28,7 @@ With PDFOSC, you can:</br>
 
 Need help or have suggestions?
 
-- **[GitHub Issues](https://github.com/eMMeCodes/pdfosc/issues)** - Report bugs or request features
+- **[GitHub Issues](https://github.com/chilibytesdotcom/pdfosc/issues)** - Report bugs or request features
 - **[Help](https://github.com/chilibytesdotcom/pdfosc/blob/main/HELP.MD)** - Comprehensive technical guides
 
 ## 📋 Version History
