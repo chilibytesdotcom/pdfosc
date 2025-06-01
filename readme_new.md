@@ -6,9 +6,8 @@
 
 </br>
 PDFOSC is an PDF viewer based on PDF.JS with Open Sound Control (OSC) functionalities.</br>
-It allows you to manage PDF presentations in any type of event, thanks to a simplified UI and clever features.</br>
-OSC provides real-time feedback and control over different places.</br>
-
+It allows you to manage PDF presentations in any type of event, thanks to a simplified UI and clever features;</br>
+not only provides real-time feedback and control across multiple devices, but addresses the limitation of PDFs: the absence of page and progress tracking.”
 </br>
 </br>
 </br>
