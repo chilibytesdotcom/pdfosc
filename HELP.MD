@@ -109,7 +109,7 @@ Access the OSC configuration through the Settings menu:
 
 **PDFOSC Won't Start**
 - Verify system requirements are met
-- If it's first run, wait.
+- If it's first run, **wait**.
 - Check file permissions in installation directory
 - Try running as administrator (Windows) or with appropriate permissions
 - Restart your computer and try again
