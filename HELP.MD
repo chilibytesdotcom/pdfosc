@@ -30,10 +30,9 @@ this guide covers everything you need to know.</br>
 A full refactor using Tauri is currently in progress: this will significantly improve performance and reduce application size.
 
 ### Opening PDF Files
-- **File Menu**: Use File → Open to browse and select PDF files
+- **File Menu**: Use File → Open to browse and select PDF file
+- **PDFOSC UI**: Click on the OPEN button to browse and select PDF file
 - **Drag & Drop**: Simply drag PDF files onto the application window
-- **Recent Files**: Quick access to recently opened documents via File → Recent
-- **Command Line**: Launch with a specific PDF: `pdfosc path/to/your/file.pdf`
 
 ---
 
@@ -48,6 +47,7 @@ PDFOSC offers optimized keyboard shortcuts designed specifically for presentatio
 - **Right Arrow** / **Page Down**: Next page
 - **Home**: Jump to first page
 - **End**: Jump to last page
+- **Direct Page Input**: Type any number followed by Enter to jump to that page
 
 ### Advanced Navigation
 - **Cmd/Ctrl + Up Arrow**: Jump to first page
@@ -57,18 +57,17 @@ PDFOSC offers optimized keyboard shortcuts designed specifically for presentatio
 - **N/P**: Alternative next/previous page navigation
 
 ### Presentation Mode
-- **Cmd/Ctrl + L**: Enter presentation mode (fullscreen)
+- **P. MODE**: Click on the P. Mode to enter presentation mode
+- **Cmd/Ctrl + L**: Enter presentation mode
 - **Escape**: Exit presentation mode
 - **Up/Down Arrows**: Navigate pages in presentation mode
-- **F**: Enter fullscreen (alternative)
-
-### Special Features
 - **Direct Page Input**: Type any number followed by Enter to jump to that page
-- **UI Page Field**: Click the page input field, enter page number, and press Enter
 
 ---
 
-## 🎮 OSC Remote Control
+## 🎛️ OSC Remote Control
+
+A Companion module is currently pending approval. Once it’s included in the stable release, you’ll find help available [here](https://github.com/chilibytesdotcom/companion-module-chilibytes-pdfosc).
 
 Control PDFOSC remotely using Open Sound Control (OSC) messages:
 
@@ -79,7 +78,6 @@ Control PDFOSC remotely using Open Sound Control (OSC) messages:
 - `/pdfosc/lastpage` - Jump to last page
 - `/pdfosc/presentation` - Enter presentation mode
 - `/pdfosc/exitpresentation` - Exit presentation mode
-- `/pdfosc/goto [page_number]` - Jump to specific page
 
 ### Real-time Feedback
 When in presentation mode, PDFOSC sends OSC feedback:
@@ -97,61 +95,11 @@ Access the OSC configuration through the Settings menu:
 - **Listen Port**: Port for receiving OSC commands (default: 55550)
 - **Send Port**: Port for sending OSC feedback (default: 55551)
 - **Target IP**: IP address for OSC feedback (default: 127.0.0.1)
-- **Enable OSC**: Toggle OSC functionality on/off
-- **Auto-reconnect**: Automatically reconnect on connection loss
-
-### Application Preferences
-- **Remember Last Page**: Automatically return to the last viewed page when reopening files
-- **Always Start from First Page**: Alternative behavior for consistent presentation starts
-- **Window Settings**: Customize window size and position
-- **Presentation Mode**: Configure auto-start and display preferences
 
 ### Network Configuration
 - **Firewall**: Ensure OSC ports are not blocked by your firewall
 - **Network Interface**: Select the appropriate network interface for OSC communication
 - **Port Conflicts**: Verify that OSC ports are not used by other applications
-
----
-
-## 🎯 Use Cases & Examples
-
-### Live Performances
-**Scenario**: Controlling slides during a musical performance
-- Use OSC commands from your performance software
-- Map MIDI controllers to OSC messages
-- Synchronize slide changes with audio cues
-- Monitor current page via OSC feedback
-
-### Educational Presentations
-**Scenario**: Remote teaching or interactive lectures
-- Control presentations from anywhere in the room
-- Use tablet or smartphone with OSC apps
-- Enable "Remember Last Page" for session continuity
-- Quick navigation with direct page jumping
-
-### Installations & Exhibitions
-**Scenario**: Automated or interactive displays
-- Network multiple PDFOSC instances
-- Create automated presentation sequences
-- Integrate with motion sensors or timers
-- Remote monitoring and control capabilities
-
-### Conference Presentations
-**Scenario**: Professional presentations with backup control
-- Primary control via keyboard shortcuts
-- Backup OSC control from mobile device
-- Quick page jumping for Q&A sessions
-- Fullscreen presentation mode
-
----
-
-## 🔗 External Links
-
-PDFOSC now features smart external link handling:
-- **Automatic Browser Opening**: Links in PDF files automatically open in your default system browser
-- **Security**: Safe handling of external URLs with user control
-- **Supported Protocols**: HTTP, HTTPS, and file:// protocols
-- **No Interruption**: Links open externally without affecting your presentation
 
 ---
 
@@ -161,6 +109,7 @@ PDFOSC now features smart external link handling:
 
 **PDFOSC Won't Start**
 - Verify system requirements are met
+- If it's first run, wait.
 - Check file permissions in installation directory
 - Try running as administrator (Windows) or with appropriate permissions
 - Restart your computer and try again
@@ -174,19 +123,19 @@ PDFOSC now features smart external link handling:
 **Performance Issues**
 - Close other resource-intensive applications
 - Use optimized PDF files when possible
-- Increase system memory if available
 - Clear application cache through Settings menu
 
 ### OSC Connection Problems
 
 **OSC Commands Not Working**
-- Verify OSC is enabled in Settings
-- Check port settings match your OSC controller
+- Verify OSC is configured in Settings
+- Check port settings
 - Ensure firewall is not blocking OSC ports
 - Test with OSC monitor software to verify message sending
 - Confirm network connectivity between devices
 
 **OSC Feedback Issues**
+- Press TEST button in **OSC > Conf OSC**, it will send 99/99 as Current/Total
 - Check that target IP address is correct
 - Verify send port settings
 - Ensure receiving application is listening on correct port
@@ -212,39 +161,6 @@ PDFOSC now features smart external link handling:
 - Try Cmd/Ctrl+L keyboard shortcut
 - Restart application if presentation mode becomes unresponsive
 
-**External Links Not Opening**
-- Verify default browser is properly configured
-- Check system security settings and permissions
-- Ensure PDF contains valid, properly formatted URLs
-- Test browser functionality independently
-
----
-
-## 💡 Tips & Best Practices
-
-### Preparation
-- **Test Before Use**: Always test your setup before important presentations
-- **Backup Plan**: Prepare alternative control methods (keyboard + OSC)
-- **File Organization**: Keep PDF files in easily accessible locations
-- **Network Testing**: Verify OSC connectivity before live use
-
-### Performance Optimization
-- **File Size**: Use compressed PDF files for better performance
-- **Memory Management**: Close unused applications before presentations
-- **Hardware Acceleration**: Enable if available in system settings
-- **Display Settings**: Use appropriate resolution for your display setup
-
-### Presentation Tips
-- **Practice Navigation**: Familiarize yourself with keyboard shortcuts
-- **Page Numbers**: Know your key page numbers for quick navigation
-- **Backup Control**: Set up multiple control methods (keyboard + OSC)
-- **Monitor Feedback**: Use OSC feedback to track presentation progress
-
-### OSC Integration
-- **Message Timing**: Allow time between rapid OSC commands
-- **Error Handling**: Implement retry logic in your OSC controller
-- **Network Stability**: Use wired connections when possible for reliability
-- **Monitoring**: Set up OSC message monitoring for debugging
 
 ---
 
