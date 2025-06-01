@@ -5,8 +5,9 @@
 <img src="https://github.com/chilibytesdotcom/pdfosc/blob/main/public/img/PDFOSC_Logo.png?raw=true" width="100" alt="PDFOSC Logo" align="left"/>
 
 </br>
-This comprehensive guide will help you get the most out of PDFOSC, the advanced PDF viewer with Open Sound Control (OSC) integration. </br>
-Whether you're using it for live performances, educational presentations, or interactive installations, this guide covers everything you need to know.</br>
+This comprehensive guide will help you get the most out of PDFOSC, the PDF viewer with Open Sound Control (OSC) integration. </br>
+Whether you're using it for live performances, educational presentations, or interactive installations, 
+this guide covers everything you need to know.</br>
 </div>
 
 </br>
@@ -18,13 +19,15 @@ Whether you're using it for live performances, educational presentations, or int
 ### System Requirements
 - Modern operating system (Windows 10+, macOS 13+ (ARM/Intel), Linux Ubuntu 23.04+)
 - Network connectivity for OSC communication
-- Sufficient system memory for PDF rendering
+- An OSC capable device (A Companion Module has been submitted and is currently pending approval)
+
 
 ### Installation & First Launch
 1. **Download** the latest release for your platform
-2. **Install** the application following your system's standard procedure
-3. **Launch** PDFOSC from your applications menu
-4. **Open** your first PDF file through the File menu or drag-and-drop
+2. **Launch** PDFOSC from your applications menu
+3. **Open** your first PDF file through the File menu or drag-and-drop
+<b>Due to the architecture of Electron, the initial launch of PDFOSC may take some time. Please be patient.
+A full refactor using Tauri is currently in progress, which will significantly improve performance and reduce application size. 
 
 ### Opening PDF Files
 - **File Menu**: Use File → Open to browse and select PDF files
