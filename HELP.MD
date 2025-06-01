@@ -5,7 +5,7 @@
 <img src="https://github.com/chilibytesdotcom/pdfosc/blob/main/public/img/PDFOSC_Logo.png?raw=true" width="100" alt="PDFOSC Logo" align="left"/>
 
 </br>
-This comprehensive guide will help you get the most out of PDFOSC, the PDF viewer with Open Sound Control (OSC) integration.</br>
+This guide will help you get the most out of PDFOSC, the PDF viewer with Open Sound Control (OSC) integration.</br>
 Whether you're using it for live performances, educational presentations, or interactive installations, 
 this guide covers everything you need to know.</br>
 </div>
