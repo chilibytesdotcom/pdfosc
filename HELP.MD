@@ -195,5 +195,5 @@ For the latest information about PDFOSC features and updates, visit the [officia
 
 
 <div align="center">
-<b>© 2025 [ChiliBytes.com](https://chilibytes.com)</b>
-</div> 
+  <b>© 2025 <a href="https://chilibytes.com" target="_blank">ChiliBytes.com</a></b>
+</div>
