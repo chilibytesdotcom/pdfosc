@@ -135,6 +135,7 @@ Access the OSC configuration through the Settings menu:
 - Confirm network connectivity between devices
 
 **OSC Feedback Issues**
+- To avoid confusion during the show, feedbacks work only in Presentatione Mde. Use TEST
 - Press TEST button in **OSC > Conf OSC**, it will send 99/99 as Current/Total
 - Check that target IP address is correct
 - Verify send port settings
@@ -182,7 +183,7 @@ Access the OSC configuration through the Settings menu:
 4. **Document the issue** with specific steps to reproduce
 5. **Test with different files** to isolate the problem
 6. **PDFOSC is a customized version of PDF.js,** and some issues may originate from the underlying PDF.js engine. 
-   To facilitate accurate reporting and resolution, please help determine whether a problem stems from PDFOSC-specific modifications or from PDF.js itself. 
+   To facilitate accurate reporting and resolution, please help determine whether a problem stems from PDFOSC-specific modifications or from PDF.js itself.</br>
    If the issue is related to PDF.js, consider reporting it directly to the PDF.js team via **[PDF.JS GitHub Issues](https://github.com/mozilla/pdf.js/issues)**.
 
 
