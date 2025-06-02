@@ -17,7 +17,7 @@ this guide covers everything you need to know.</br>
 ## 🚀 Getting Started
 
 ### System Requirements
-- Modern operating system (Windows 10+, macOS 13+ (ARM/Intel), Linux Ubuntu 23.04+)
+- Modern operating system (Windows 10+, macOS 11+ (ARM/Intel), Linux (Ubuntu 18.04+, Fedora 32+, Debian 10+))
 - Network connectivity for OSC communication
 - An OSC capable device (A Companion Module has been submitted and is currently pending approval)
 
@@ -119,11 +119,6 @@ Access the OSC configuration through the Settings menu:
 - Check file permissions and ensure you have read access
 - Ensure the PDF is not password-protected or encrypted
 - Try copying the file to a different location
-
-**Performance Issues**
-- Close other resource-intensive applications
-- Use optimized PDF files when possible
-- Clear application cache through Settings menu
 
 ### OSC Connection Problems
 
