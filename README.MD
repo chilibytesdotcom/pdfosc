@@ -12,7 +12,6 @@ the absence of real-time tracking and feedback in Presentation Mode.
 </br>
 </br>
 </br>
-</br>
 
 With PDFOSC, you can:</br>
 - Control PDF presentations remotely using OSC commands</br>
