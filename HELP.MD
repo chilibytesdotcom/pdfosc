@@ -14,7 +14,7 @@ this guide covers everything you need to know.</br>
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### System Requirements
 - Modern operating system (Windows 10+, macOS 11+ (ARM/Intel), Linux (Ubuntu 18.04+, Fedora 32+, Debian 10+))
@@ -65,7 +65,7 @@ PDFOSC offers optimized keyboard shortcuts designed specifically for presentatio
 
 ---
 
-## 🎛️ OSC Remote Control
+## OSC Remote Control
 
 A Companion module is currently pending approval. Once it’s included in the stable release, you’ll find help available [here](https://github.com/chilibytesdotcom/companion-module-chilibytes-pdfosc).
 
@@ -87,7 +87,7 @@ When in presentation mode, PDFOSC sends OSC feedback:
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 ### OSC Settings
 Access the OSC configuration through the Settings menu:
@@ -103,7 +103,7 @@ Access the OSC configuration through the Settings menu:
 
 ---
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 ### Application Issues
 
@@ -160,7 +160,7 @@ Access the OSC configuration through the Settings menu:
 
 ---
 
-## 📞 Getting Help
+## Getting Help
 
 ### Documentation Resources
 - **[Official Repository](https://github.com/chilibytesdotcom/pdfosc)** - Latest updates
@@ -184,7 +184,7 @@ Access the OSC configuration through the Settings menu:
 
 ---
 
-## 🔄 Version Information
+## Version Information
 
 This help guide is updated regularly to reflect new features and improvements.</br>
 For the latest information about PDFOSC features and updates, visit the [official repository](https://github.com/chilibytesdotcom/pdfosc).
