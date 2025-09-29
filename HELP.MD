@@ -130,7 +130,7 @@ Access the OSC configuration through the Settings menu:
 - Confirm network connectivity between devices
 
 **OSC Feedback Issues**
-- To avoid confusion during the show, feedbacks work only in Presentatione Mde. Use TEST
+- To avoid confusion during the show, feedbacks work only in Presentatione Mode
 - Press TEST button in **OSC > Conf OSC**, it will send 99/99 as Current/Total
 - Check that target IP address is correct
 - Verify send port settings
