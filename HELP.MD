@@ -152,7 +152,7 @@ Access the OSC configuration through the Settings menu:
 **Presentation Mode Problems**
 - Press Escape to ensure you're not already in presentation mode
 - Check display settings if using multiple monitors
-- Try Cmd/Ctrl+L keyboard shortcut
+- Try Cmd/Ctrl+L or P keyboard shortcut
 - Restart application if presentation mode becomes unresponsive
 
 
