@@ -53,8 +53,6 @@ PDFOSC offers optimized keyboard shortcuts designed specifically for presentatio
 - **Cmd/Ctrl + Up Arrow**: Jump to first page
 - **Cmd/Ctrl + Down Arrow**: Jump to last page
 - **Numbers + Enter**: Type page number and press Enter to jump directly
-- **J/K**: Alternative next/previous page navigation
-- **N/P**: Alternative next/previous page navigation
 
 ### Presentation Mode
 - **P. MODE**: Click on the P. Mode to enter presentation mode
