@@ -62,15 +62,6 @@ With an issue, include the OS, the PDFOSC version, and the steps.
 
 ---
 
-## Build from source
-
-```bash
-cargo test
-cargo build --release
-```
-
-`scripts/build-release.sh` runs the tests, then the macOS and Windows release builds, and checks the result. Pdfium ships in `assets/` (`libpdfium.dylib`, `libpdfium-x86_64.dylib`, `pdfium.dll`). Local run: `cargo run`.
-
 **Help → Check Update** compares this version with GitHub Latest and opens the release page. It does not download and it does not install. A useful answer needs Latest to be a `v3.x.y` tag. Until then the check reports failure. That is expected while the public Latest is still a version 1 tag.
 
 ---
