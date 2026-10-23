@@ -82,9 +82,9 @@ A launch with no file shows a short welcome, then an empty canvas. You can also 
 
 ## Presentation
 
-| Setup | What you see |
+| Setup | Behavior |
 |-------|----------------|
-| **One screen** | The main window goes fullscreen and shows the page only. **Config → Mode → Presenter** does not change this path |
+| **One screen** | The main window goes fullscreen and shows the page only. **Config → Mode → Presenter/Operator** does not change this path |
 | **Second screen, Presenter off** | A borderless **PDFOSC — Projector** window opens on the other display. The main window stays windowed so you can run the show |
 | **Second screen, Presenter on** | The preference is **Config → Mode → Presenter** and it is remembered. The projector still shows the current page only. The main display shows the current page and the next page, with `current / total` above. On the last page the next slot is empty |
 
