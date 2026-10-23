@@ -30,7 +30,8 @@ Downloads: [Releases](https://github.com/chilibytesdotcom/pdfosc/releases) · gu
 
 - **Windows 10** or later, **macOS 13** or later (Apple Silicon and Intel), or a recent **Linux** desktop
 - A local network or loopback, if you use OSC
-- An OSC controller. The Companion module is in stable: [companion-module-chilibytes-pdfosc](https://github.com/bitfocus/companion-module-chilibytes-pdfosc). In Companion: Connections → Add Connection → search for “PDFOSC”.
+- An OSC controller. The Companion module is in stable: [companion-module-chilibytes-pdfosc](https://github.com/bitfocus/companion-module-chilibytes-pdfosc). 
+  In Companion: Connections → Add Connection → search for “PDFOSC”.
 
 ---
 
