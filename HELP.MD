@@ -2,12 +2,13 @@
 
 <div>
 <h2>Welcome to PDFOSC</h2>
-<img src="https://github.com/chilibytesdotcom/pdfosc/blob/main/public/img/PDFOSC_Logo.png?raw=true" width="100" alt="PDFOSC Logo" align="left"/>
+<img src="public/PDFOSC_Logo.png" width="100" alt="PDFOSC Logo" align="left"/>
 
 </br>
-This guide will help you get the most out of PDFOSC, the PDF viewer with Open Sound Control (OSC) integration.</br>
-Whether you're using it for live performances, educational presentations, or interactive installations, 
-this guide covers everything you need to know.</br>
+This guide is for PDFOSC <b>version 3.0.0</b>, the native PDF viewer with Open Sound Control.</br>
+Use it for a live show, a class, or an installation.</br>
+Version 1 was an Electron app with PDF.js. The OSC addresses below are the same ones.</br>
+Downloads: <a href="https://github.com/chilibytesdotcom/pdfosc/releases">Releases</a>.
 </div>
 
 </br>
@@ -16,178 +17,214 @@ this guide covers everything you need to know.</br>
 
 ## Getting Started
 
-### System Requirements
-- Modern operating system (Windows 10+, macOS 11+ (ARM/Intel), Linux (Ubuntu 18.04+, Fedora 32+, Debian 10+))
-- Network connectivity for OSC communication
-- An OSC capable device (A Companion Module has been submitted and is currently pending approval)
+### System requirements
 
+- Windows 10 or later, macOS 13 or later (Apple Silicon and Intel), or a recent Linux desktop
+- A local network or loopback, if you use OSC
+- An OSC controller. The Companion module is in stable: [companion-module-chilibytes-pdfosc](https://github.com/bitfocus/companion-module-chilibytes-pdfosc). In Companion, add a connection and search for “PDFOSC”.
 
-### Installation & First Launch
-1. **Download** the latest release for your platform
-2. **Launch** PDFOSC from your applications menu
-3. **Open** your first PDF file through the File menu or drag-and-drop</br>
-**Note:** Due to the architecture of Electron, **the initial launch of PDFOSC may take some time.** Please be patient.</br>
-A full refactor using Tauri is currently in progress: this will significantly improve performance and reduce application size.
+### Installation and first launch
 
-### Opening PDF Files
-- **File Menu**: Use File → Open to browse and select PDF file
-- **PDFOSC UI**: Click on the OPEN button to browse and select PDF file
-- **Drag & Drop**: Simply drag PDF files onto the application window
+1. **Download** the [latest release](https://github.com/chilibytesdotcom/pdfosc/releases) for your machine
+2. **Launch** PDFOSC
+3. **Open** a PDF
 
----
+A launch with no file shows a short welcome, then an empty canvas. You can also pass a `.pdf` path as the first argument (“Open with”).
 
-## ⌨️ Keyboard Navigation
+**Note:** Password-protected PDFs are refused with “Password-protected PDF: remove the protection before using it.” On macOS, AppleDouble names (`._….pdf`) are hidden in the open panel and are not opened from the command line either.
 
-PDFOSC offers optimized keyboard shortcuts designed specifically for presentation environments:
+### Opening PDF files
 
-### Basic Navigation
-- **Space**: Go to next page
-- **Backspace**: Go to previous page
-- **Left Arrow** / **Page Up**: Previous page
-- **Right Arrow** / **Page Down**: Next page
-- **Home**: Jump to first page
-- **End**: Jump to last page
-- **Direct Page Input**: Type any number followed by Enter to jump to that page
-
-### Advanced Navigation
-- **Cmd/Ctrl + Up Arrow**: Jump to first page
-- **Cmd/Ctrl + Down Arrow**: Jump to last page
-- **Numbers + Enter**: Type page number and press Enter to jump directly
-
-### Presentation Mode
-- **P. MODE**: Click on the P. Mode to enter presentation mode
-- **Cmd/Ctrl + L**: Enter presentation mode
-- **Escape**: Exit presentation mode
-- **Up/Down Arrows**: Navigate pages in presentation mode
-- **Direct Page Input**: Type any number followed by Enter to jump to that page
+| How | Action |
+|-----|--------|
+| **File menu** | File → Open PDF… |
+| **Toolbar** | Open button |
+| **Keyboard** | `O` or `Ctrl/Cmd+O`, including while a presentation is running |
+| **Drag and drop** | Drop a PDF onto the window |
 
 ---
 
-## OSC Remote Control
+## Keyboard navigation
 
-A Companion module is currently pending approval. Once it’s included in the stable release, you’ll find help available [here](https://github.com/chilibytesdotcom/companion-module-chilibytes-pdfosc).
+### Basic navigation
 
-Control PDFOSC remotely using Open Sound Control (OSC) messages:
+| Key | Action |
+|-----|--------|
+| **Space** | Next page |
+| **Backspace** | Previous page |
+| **←** / **Page Up** | Previous page |
+| **→** / **Page Down** | Next page |
+| **↑** / **↓** | Previous page / next page |
+| **Home** | First page |
+| **End** | Last page |
+| **Digits + Enter** | Jump to that page. Ignored while OSC Config, Help, About, or Check Update is open |
 
-### Available Commands
-- `/pdfosc/next` - Go to next page
-- `/pdfosc/prev` - Go to previous page  
-- `/pdfosc/firstpage` - Jump to first page
-- `/pdfosc/lastpage` - Jump to last page
-- `/pdfosc/presentation` - Enter presentation mode
-- `/pdfosc/exitpresentation` - Exit presentation mode
+### Advanced
 
-### Real-time Feedback
-When in presentation mode, PDFOSC sends OSC feedback:
-- `/pdfosc/current [page]` - Current page number
-- `/pdfosc/total [pages]` - Total number of pages
-- `/pdfosc/state [status]` - Presentation mode status
+| Key | Action |
+|-----|--------|
+| **Ctrl/Cmd + ↑** | First page |
+| **Ctrl/Cmd + ↓** | Last page |
+| **+** / **=** | Zoom in, 10% steps. Off during single-screen presentation and in the presenter view |
+| **-** | Zoom out, same limit |
+| **O** / **Ctrl/Cmd+O** | Open a PDF |
+| **H** | Help |
+| **Ctrl/Cmd+Q** | Quit |
+
+### Presentation keys
+
+| Key | Action |
+|-----|--------|
+| **P** or **Ctrl/Cmd+L** | Enter presentation. **P** also leaves single-screen presentation |
+| **Esc** | Leave single-screen presentation, close the projector, or close a modal |
+
+---
+
+## Presentation
+
+| Setup | What you see |
+|-------|----------------|
+| **One screen** | The main window goes fullscreen and shows the page only. **Config → Mode → Presenter** does not change this path |
+| **Second screen, Presenter off** | A borderless **PDFOSC — Projector** window opens on the other display. The main window stays windowed so you can run the show |
+| **Second screen, Presenter on** | The preference is **Config → Mode → Presenter** and it is remembered. The projector still shows the current page only. The main display shows the current page and the next page, with `current / total` above. On the last page the next slot is empty |
+
+The main window stays a normal window for as long as the projector exists.
+
+| Control | Behavior |
+|---------|----------|
+| **Cue** | Under Operator, on a dual screen. The window stays the Operator window. A thumbnail click previews a page on this screen. Enter puts that page on the projector. The check is off while Presenter is selected, and the stored value stays |
+| **Hidden pages** | The button beside Thumbnails. On, next and previous skip hidden pages, and a right-click on a thumbnail hides or shows that page. The counter stays the real PDF number. Turning it off shows every page and leaves the saved data in place |
+| **Thumbnails** | They follow the page on air. After you scroll the list, it returns to the current page about 3 seconds after you stop |
+
+---
+
+## OSC remote control
+
+The listener binds `0.0.0.0`. Any device that can reach the machine can send a command. There is no password. Use a dedicated show network or a firewall when the LAN is not yours alone.
+
+**Press only:** a command runs when the message has no arguments, or when the first argument is a press (an integer or float greater than 0, or `true`). `0` and `false` (button release) are ignored, so a press-and-release controller advances one page.
+
+### Commands
+
+| Address | Action |
+|---------|--------|
+| `/pdfosc/next` | Next page |
+| `/pdfosc/prev` | Previous page |
+| `/pdfosc/firstpage` | First page |
+| `/pdfosc/lastpage` | Last page |
+| `/pdfosc/presentation` | Enter presentation |
+| `/pdfosc/exitpresentation` | Leave presentation |
+| `/pdfosc/version` | The app replies with its version string |
+
+### Feedback
+
+Sent while presenting. At rest the values are current 0, total 0, state `1`. UDP can drop packets. They leave the app in order.
+
+| Address | Value |
+|---------|--------|
+| `/pdfosc/current` | Current page |
+| `/pdfosc/total` | Page count |
+| `/pdfosc/state` | `1` idle, `3` presentation |
 
 ---
 
 ## Configuration
 
-### OSC Settings
-Access the OSC configuration through the Settings menu:
+**Config** stays open while you change a row.
 
-- **Listen Port**: Port for receiving OSC commands (default: 55550)
-- **Send Port**: Port for sending OSC feedback (default: 55551)
-- **Target IP**: IP address for OSC feedback (default: 127.0.0.1)
+| Row | What it does |
+|-----|----------------|
+| **Theme: Dark** or **Theme: Light** | The theme that is on. Click to flip. With no settings file the theme is light |
+| **Mode** | **Operator** or **Presenter**. Operator is the window with the controls. Presenter, with a second monitor, shows the current page and the next page |
+| **Cue** | Under Operator. See Presentation above |
+| **Purge Data → Clear this data** | Deletes the saved hidden-page data for the open file |
+| **Clear All Data** | Deletes it for every opened file, including this one. The Hide Pages switch stays as it is |
 
-### Network Configuration
-- **Firewall**: Ensure OSC ports are not blocked by your firewall
-- **Network Interface**: Select the appropriate network interface for OSC communication
-- **Port Conflicts**: Verify that OSC ports are not used by other applications
+The lists are in `hidden-pages.json`, next to `config.json`, in the OS config directory for `com.pdfosc.pdfosc`, outside the app. Replacing the app leaves that file in place.
+
+### OSC settings
+
+**Config → OSC…**
+
+| Setting | What it does |
+|---------|----------------|
+| **Target IP** | Where feedback goes (IPv4). Default `127.0.0.1`. An unreadable address falls back to loopback |
+| **Output port** | Feedback destination. Default `55551` |
+| **Listen port** | UDP port for commands. Default `55550`. On a first run, if the chosen port is busy, the app tries **55550–55560** |
+| **Test** | Sends current `99`, total `99`, state `3`, so you can see the receiver move |
+| **Save** | Applies the new settings only after the new listen port is actually bound. If the bind fails, the previous listener and the previous settings stay |
+
+The listen port must be non-zero and different from the output port.
+
+---
+
+## Check Update and About
+
+**Help → Check Update** asks GitHub for the Latest release and compares it with this build. It does not run at startup, and it does not run during a presentation. It does not download and it does not install.
+
+| Notice | Meaning |
+|--------|---------|
+| **Checking** | The request is in flight |
+| **Up to date** | Latest is this version or older. The notice hides itself after a few seconds |
+| **A newer tag** | Shown as a link to the release page. The notice stays until you dismiss it |
+| **Failed** | The network fails, the body cannot be read, or the Latest tag is not a version number (`3.0.1` or `v3.0.1`). A pre-release suffix is ignored (`v3.0.1-beta` counts as `3.0.1`) |
+
+Until the public Latest is a `v3.x.y` tag of this app, the result is Failed. A version 1 tag is not offered as an update.
+
+**Help → About PDFOSC** exists on Windows and shows the version plus the build id. On macOS that text is in the system About menu.
 
 ---
 
 ## Troubleshooting
 
-### Application Issues
+### Application
 
-**PDFOSC Won't Start**
-- Verify system requirements are met
-- If it's first run, **wait**.
-- Check file permissions in installation directory
-- Try running as administrator (Windows) or with appropriate permissions
-- Restart your computer and try again
+**PDFOSC will not start**  
+Use a build for your machine (macOS universal, Windows x64). Check that the OS is in the range above.
 
-**PDF Files Won't Open**
-- Verify the PDF file is not corrupted (try opening in another PDF viewer)
-- Check file permissions and ensure you have read access
-- Ensure the PDF is not password-protected or encrypted
-- Try copying the file to a different location
+**A PDF will not open**  
+Try another viewer, and check that you can read the file. Remove a password. The message is “Password-protected PDF: remove the protection before using it.” Copy the file onto a local disk. Names that start with `._` are skipped on purpose.
 
-### OSC Connection Problems
+**The window freezes on a heavy page**  
+The page is drawn on the interface thread. After that page is on screen, the neighbors are prepared on later frames.
 
-**OSC Commands Not Working**
-- Verify OSC is configured in Settings
-- Check port settings
-- Ensure firewall is not blocking OSC ports
-- Test with OSC monitor software to verify message sending
-- Confirm network connectivity between devices
+### OSC
 
-**OSC Feedback Issues**
-- To avoid confusion during the show, feedbacks work only in Presentatione Mode
-- Press TEST button in **OSC > Conf OSC**, it will send 99/99 as Current/Total
-- Check that target IP address is correct
-- Verify send port settings
-- Ensure receiving application is listening on correct port
-- Test network connection between devices
+**OSC commands do nothing**  
+Open **Config → OSC…** and confirm the listen port. Confirm the firewall, and that the controller is aimed at this machine. A release value (`0` or `false`) is ignored.
 
-**Network Connectivity**
-- Verify both devices are on the same network
-- Check for network firewall restrictions
-- Test basic network connectivity (ping)
-- Try different network interface if available
+**There is no feedback**  
+Feedback for the live page is sent in presentation (`state` 3). Press **Test**. It sends `99 / 99 / 3`. Check the target IP and the output port.
 
-### Presentation Issues
+### Presentation
 
-**Keyboard Shortcuts Not Working**
-- Ensure PDFOSC window has focus
-- Check if another application is capturing key events
-- Try clicking in the PDFOSC window first
-- Verify you're not in a text input field
+**The projector is missing or on the wrong screen**  
+The app looks for a display that is not the primary one. One monitor uses fullscreen on the main window instead. On Windows, two monitors with different scaling can still place the projector window badly: reconnect the display or restart the app.
 
-**Presentation Mode Problems**
-- Press Escape to ensure you're not already in presentation mode
-- Check display settings if using multiple monitors
-- Try Cmd/Ctrl+L or P keyboard shortcut
-- Restart application if presentation mode becomes unresponsive
-
+**You cannot leave presentation**  
+**Esc** on the main window or on the projector. **P** in single-screen mode. OSC `/pdfosc/exitpresentation`.
 
 ---
 
-## Getting Help
+## Getting help
 
-### Documentation Resources
-- **[Official Repository](https://github.com/chilibytesdotcom/pdfosc)** - Latest updates
-- **[GitHub Issues](https://github.com/chilibytesdotcom/pdfosc/issues)** - Report bugs or request features
+- **[Repository](https://github.com/chilibytesdotcom/pdfosc)** — this program
+- **[Releases](https://github.com/chilibytesdotcom/pdfosc/releases)** — downloads
+- **[Issues](https://github.com/chilibytesdotcom/pdfosc/issues)** — bugs and requests
 
-### Community Support
-- Search existing GitHub issues for similar problems
-- Post detailed bug reports with system information
-- Share feature requests and use case scenarios
-
-### Before Contacting Support
-1. **Check this guide** for common solutions
-2. **Update to latest version** if available
-3. **Gather system information** (OS version, PDFOSC version, etc.)
-4. **Document the issue** with specific steps to reproduce
-5. **Test with different files** to isolate the problem
-6. **PDFOSC is a customized version of PDF.js,** and some issues may originate from the underlying PDF.js engine. 
-   To facilitate accurate reporting and resolution, please help determine whether a problem stems from PDFOSC-specific modifications or from PDF.js itself.</br>
-   If the issue is related to PDF.js, consider reporting it directly to the PDF.js team via **[PDF.JS GitHub Issues](https://github.com/mozilla/pdf.js/issues)**.
-
+Before opening an issue: read this guide, note the OS and the PDFOSC version, write the steps that show the problem, and try another PDF to see whether the file is the cause.
 
 ---
 
-## Version Information
+## Version information
 
-This help guide is updated regularly to reflect new features and improvements.</br>
-For the latest information about PDFOSC features and updates, visit the [official repository](https://github.com/chilibytesdotcom/pdfosc).
+This guide describes **PDFOSC 3.0.0**.
+Version 1.0.0 was the Electron and PDF.js release. Its OSC addresses are still the ones in this guide.
 
+For the latest builds, visit the [repository](https://github.com/chilibytesdotcom/pdfosc) and [Releases](https://github.com/chilibytesdotcom/pdfosc/releases).
+
+PDFOSC is licensed under the [ISC License](LICENSE). Third-party notices: [THIRD_PARTY.md](THIRD_PARTY.md).
 
 <div align="center">
-  <b>© 2025 <a href="https://chilibytes.com" target="_blank">ChiliBytes.com</a></b>
+  <b>© <a href="https://chilibytes.com" target="_blank">ChiliBytes.com</a></b>
 </div>
