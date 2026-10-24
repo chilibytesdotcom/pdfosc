@@ -68,9 +68,9 @@ With an issue, include the OS, the PDFOSC version, and the steps.
 
 ## 📄 License
 
-PDFOSC is licensed under the **[ISC License](LICENSE)**. Copyright ChiliBytes.
+PDFOSC is licensed under the [ISC License](LICENSE). Copyright ChiliBytes.
 
-Third-party notices, including Pdfium (Apache-2.0) and the Ubuntu fonts: **[THIRD_PARTY.md](THIRD_PARTY.md)** · Apache text in [`licenses/Apache-2.0.txt`](licenses/Apache-2.0.txt) · Ubuntu fonts in [`assets/fonts/LICENCE.txt`](assets/fonts/LICENCE.txt).
+Third-party notices, including Pdfium (BSD-3-Clause and Apache-2.0) and the Ubuntu fonts: [THIRD_PARTY.md](THIRD_PARTY.md).
 
 ---
 
